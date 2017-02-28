@@ -5,7 +5,7 @@
 
 import UIKit
 class AlarmTableViewController: UITableViewController {
-
+    
     @IBOutlet var toggle: UISwitch!
     @IBOutlet var date: UILabel!
     var pickerVisible = false
@@ -24,11 +24,10 @@ class AlarmTableViewController: UITableViewController {
     }
     
     @IBAction func save(_ sender: Any) {
-        //if toggle.isOn && date.text != "Detail"{
-            self.performSegue(withIdentifier: "unwindToEvent", sender: self)
-        //}
+        self.performSegue(withIdentifier: "unwindToEvent", sender: self)
+        
     }
-
+    
     @IBAction func toggleValueChanged(_ sender: UISwitch) {
         tableView.reloadData()
     }
@@ -45,7 +44,7 @@ class AlarmTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "unwindToEvent" {
             if tempDate != nil{
-            (segue.destination as! AddEventController).alarmData = tempDate!
+                (segue.destination as! AddEventController).alarmData = tempDate!
             }
         }
     }
@@ -54,7 +53,7 @@ class AlarmTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

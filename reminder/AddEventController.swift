@@ -9,7 +9,7 @@ class AddEventController: ReminderDataViewController {
     
     @IBOutlet var myTitle: UITextField!
     @IBOutlet var myContent: UITextView!
-    var dateComponents = [String]()    
+    var dateComponents = [String]()
     var alarmData: Date?
     
     // 取得螢幕的尺寸
@@ -22,7 +22,7 @@ class AddEventController: ReminderDataViewController {
         var eventContent = myContent.text
         if eventTitle == "" { eventTitle = "New Event" }
         if eventContent == "" { eventContent = "No Content" }
-        
+        //寫入資料
         writePlist(title: eventTitle!, content: eventContent!, date: dateComponents)
         
         self.performSegue(withIdentifier: "unwindToMenu", sender: self)
@@ -42,7 +42,7 @@ class AddEventController: ReminderDataViewController {
     //MARK: Back to Event
     @IBAction func unwindToEvent(segue: UIStoryboardSegue) {
         if alarmData != nil{
-        formatDate(date: self.alarmData!)
+            formatDate(date: self.alarmData!)
         }
     }
     
