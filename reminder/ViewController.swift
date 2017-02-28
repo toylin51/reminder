@@ -61,19 +61,19 @@ class ViewController: ReminderDataViewController, UITableViewDelegate ,UITableVi
         tableView.frame = CGRect(origin: CGPoint(x:0,y:64), size: CGSize(width:fullScreenSize.width,height:fullScreenSize.height-64))
         toolBar.isHidden = true
         firstLoadPlist()
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.setEditing(false, animated: true)
         self.tableView.reloadData()
     }
-
+    
     
     //MARK: TableView
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -88,7 +88,12 @@ class ViewController: ReminderDataViewController, UITableViewDelegate ,UITableVi
         
         cell.eventTitle.text = (events.object(at: indexPath.row) as AnyObject).object(forKey: "Title") as? String
         cell.eventContent.text = (events.object(at: indexPath.row) as AnyObject).object(forKey: "Content") as? String
-        cell.imgView.image = UIImage(named: "ic_alarm_off.png")
+        let dateArr = (events.object(at: indexPath.row) as AnyObject).object(forKey: "Date") as? [String]
+        if dateArr?.count != 0{
+            cell.imgView.image = UIImage(named: "ic_alarm.png")
+        }else{
+            cell.imgView.image = UIImage(named: "ic_alarm_off.png")
+        }
         
         return cell
     }
