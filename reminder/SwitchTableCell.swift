@@ -2,9 +2,6 @@
 //  SwitchTableCell.swift
 //  reminder
 //
-//  Created by LinTing-yang on 2017/2/12.
-//  Copyright © 2017年 sample. All rights reserved.
-//
 
 import UIKit
 

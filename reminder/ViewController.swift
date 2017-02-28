@@ -2,9 +2,6 @@
 //  ViewController.swift
 //  reminder
 //
-//  Created by LinTing-yang on 2017/1/6.
-//  Copyright © 2017年 sample. All rights reserved.
-//
 
 import UIKit
 

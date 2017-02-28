@@ -2,9 +2,6 @@
 //  AlarmTableViewController.swift
 //  reminder
 //
-//  Created by LinTing-yang on 2017/2/12.
-//  Copyright © 2017年 sample. All rights reserved.
-//
 
 import UIKit
 class AlarmTableViewController: UITableViewController {
@@ -13,7 +10,7 @@ class AlarmTableViewController: UITableViewController {
     @IBOutlet var date: UILabel!
     var pickerVisible = false
     var tempDate: Date?
-    //var delegate: AlarmDelegate?
+    
     let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
     
     override func viewDidLoad() {
@@ -27,9 +24,9 @@ class AlarmTableViewController: UITableViewController {
     }
     
     @IBAction func save(_ sender: Any) {
-        if toggle.isOn && date.text != "Detail"{
+        //if toggle.isOn && date.text != "Detail"{
             self.performSegue(withIdentifier: "unwindToEvent", sender: self)
-        }
+        //}
     }
 
     @IBAction func toggleValueChanged(_ sender: UISwitch) {
@@ -47,7 +44,9 @@ class AlarmTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "unwindToEvent" {
+            if tempDate != nil{
             (segue.destination as! AddEventController).alarmData = tempDate!
+            }
         }
     }
     
