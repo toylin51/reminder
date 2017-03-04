@@ -5,7 +5,7 @@
 
 import UIKit
 
-class ReminderDataViewController: UIViewController {
+class ReminderDataViewController: UIViewController{
 
     var events = NSMutableArray()
     
