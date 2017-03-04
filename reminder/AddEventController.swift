@@ -84,6 +84,7 @@ class AddEventController: ReminderDataViewController {
         content.title = eventTitle
         content.body = eventContent
         content.sound = UNNotificationSound.default()
+        content.badge = 1
         
         var date = DateComponents()
         date.month = Int(dateComponents[0])
@@ -92,8 +93,6 @@ class AddEventController: ReminderDataViewController {
         date.minute = Int(dateComponents[3])
         
         let trigger = UNCalendarNotificationTrigger.init(dateMatching: date, repeats: false)
-        //測試用trigger
-        //let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 5.0, repeats: false)
         let request = UNNotificationRequest(identifier: date.description, content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)

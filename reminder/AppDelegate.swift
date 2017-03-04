@@ -17,9 +17,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         //Requesting Authorization for User Interactions
         let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
-            // Enable or disable features based on authorization.
-        }
+        center.requestAuthorization(options: [ .alert, .sound, .badge], completionHandler: { granted, error in
+            if granted{
+                print("取得通知權限")
+            }else{
+                print("未取得通知權限")
+            }
+        })
         UNUserNotificationCenter.current().delegate = self
         
         return true
