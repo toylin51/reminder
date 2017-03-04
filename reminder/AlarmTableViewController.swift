@@ -30,6 +30,13 @@ class AlarmTableViewController: UITableViewController {
     }
     
     @IBAction func toggleValueChanged(_ sender: UISwitch) {
+        if toggle.isOn{
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = DateFormatter.Style.medium
+            dateFormatter.timeStyle = DateFormatter.Style.short
+            tempDate = Date()
+            date.text = dateFormatter.string(from: tempDate!)
+        }
         tableView.reloadData()
     }
     
@@ -64,6 +71,7 @@ class AlarmTableViewController: UITableViewController {
             pickerVisible = !pickerVisible
             tableView.reloadData()
         }
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
