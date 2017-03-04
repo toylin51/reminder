@@ -92,6 +92,7 @@ class EventViewController: DataTableViewController {
     
     //MARK: 格式化時間
     func formatDate(date: Date) {
+        dateComponents = []
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy"
         dateComponents.append(dateFormatter.string(from: date))

@@ -66,7 +66,6 @@ class DataTableViewController : UITableViewController{
         event.setValue(date, forKey: "Date")
         event.setValue(timeStemp, forKey: "Stemp")
         
-        writePlist()
-        
+        writePlist()        
     }
 }

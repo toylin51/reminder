@@ -6,7 +6,7 @@
 import UIKit
 
 class ReminderDataViewController: UIViewController{
-
+    
     var events = NSMutableArray()
     
     let path : NSString = Bundle.main.path(forResource: "Events", ofType:  "plist")! as NSString
@@ -17,12 +17,12 @@ class ReminderDataViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         documentsDirectory = paths.object(at: 0) as! NSString
         writablePath = documentsDirectory.appendingPathComponent("Events.plist")
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -55,7 +55,7 @@ class ReminderDataViewController: UIViewController{
     func writePlist(title: String, content: String, date: [String], timeStemp: String) {
         let event = ["Title": title, "Content": content, "Date": date, "Stemp": timeStemp] as [String : Any]
         events.add(event)
-        events.write(toFile: writablePath, atomically: true)
+        writePlist()
     }
     
     //MARK: 更新 plist
@@ -67,7 +67,6 @@ class ReminderDataViewController: UIViewController{
         event.setValue(date, forKey: "Date")
         event.setValue(timeStemp, forKey: "Stemp")
         
-        writePlist()
-        
+        writePlist()        
     }
 }
