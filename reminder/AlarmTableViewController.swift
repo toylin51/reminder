@@ -44,8 +44,10 @@ class AlarmTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "unwindToEvent" {
-            if tempDate != nil{
-                (segue.destination as! AddEventController).alarmData = tempDate!
+            if tempDate != nil && toggle.isOn{
+                (segue.destination as! EventViewController).alarmData = tempDate!
+            }else{
+                (segue.destination as! EventViewController).alarmData = nil
             }
         }
     }
