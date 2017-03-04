@@ -12,8 +12,9 @@
 		7B21A1241E1F6F1E00D46A36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B21A1221E1F6F1E00D46A36 /* Main.storyboard */; };
 		7B21A1261E1F6F1E00D46A36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B21A1251E1F6F1E00D46A36 /* Assets.xcassets */; };
 		7B21A1291E1F6F1E00D46A36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B21A1271E1F6F1E00D46A36 /* LaunchScreen.storyboard */; };
-		7B21A1311E1F744B00D46A36 /* AddEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B21A1301E1F744B00D46A36 /* AddEventController.swift */; };
 		7B21A1331E1F749900D46A36 /* Events.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B21A1321E1F749900D46A36 /* Events.plist */; };
+		7B5744711E6AF8BC00435965 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5744701E6AF8BC00435965 /* EventViewController.swift */; };
+		7B5744731E6B013000435965 /* DataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5744721E6B013000435965 /* DataTableViewController.swift */; };
 		7B9EBFC01E21E6A800222965 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9EBFBF1E21E6A800222965 /* CustomTableViewCell.swift */; };
 		7BA944B91E4DFF8B0085C30F /* ReminderDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA944B81E4DFF8B0085C30F /* ReminderDataViewController.swift */; };
 		7BEAC5361E503FC8006E225C /* AlarmTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEAC5351E503FC8006E225C /* AlarmTableViewController.swift */; };
@@ -27,8 +28,9 @@
 		7B21A1251E1F6F1E00D46A36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B21A1281E1F6F1E00D46A36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B21A12A1E1F6F1E00D46A36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7B21A1301E1F744B00D46A36 /* AddEventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventController.swift; sourceTree = "<group>"; };
 		7B21A1321E1F749900D46A36 /* Events.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Events.plist; sourceTree = "<group>"; };
+		7B5744701E6AF8BC00435965 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		7B5744721E6B013000435965 /* DataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTableViewController.swift; sourceTree = "<group>"; };
 		7B9EBFBF1E21E6A800222965 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		7BA944B81E4DFF8B0085C30F /* ReminderDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderDataViewController.swift; sourceTree = "<group>"; };
 		7BEAC5351E503FC8006E225C /* AlarmTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTableViewController.swift; sourceTree = "<group>"; };
@@ -80,9 +82,10 @@
 			isa = PBXGroup;
 			children = (
 				7B21A1201E1F6F1E00D46A36 /* ViewController.swift */,
-				7B21A1301E1F744B00D46A36 /* AddEventController.swift */,
+				7B5744701E6AF8BC00435965 /* EventViewController.swift */,
 				7BEAC5351E503FC8006E225C /* AlarmTableViewController.swift */,
 				7BA944B81E4DFF8B0085C30F /* ReminderDataViewController.swift */,
+				7B5744721E6B013000435965 /* DataTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -171,9 +174,10 @@
 			files = (
 				7BA944B91E4DFF8B0085C30F /* ReminderDataViewController.swift in Sources */,
 				7BEAC5361E503FC8006E225C /* AlarmTableViewController.swift in Sources */,
-				7B21A1311E1F744B00D46A36 /* AddEventController.swift in Sources */,
+				7B5744711E6AF8BC00435965 /* EventViewController.swift in Sources */,
 				7B21A1211E1F6F1E00D46A36 /* ViewController.swift in Sources */,
 				7B9EBFC01E21E6A800222965 /* CustomTableViewCell.swift in Sources */,
+				7B5744731E6B013000435965 /* DataTableViewController.swift in Sources */,
 				7B21A11F1E1F6F1E00D46A36 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

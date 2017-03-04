@@ -35,7 +35,7 @@ class ViewController: ReminderDataViewController, UITableViewDelegate ,UITableVi
         var removeNotifications = [String]()
         if let selectedItems = tableView!.indexPathsForSelectedRows {
             for indexPath in selectedItems {
-                var stemp = (events.object(at: indexPath.row) as AnyObject).object(forKey: "Stemp") as? String
+                let stemp = (events.object(at: indexPath.row) as AnyObject).object(forKey: "Stemp") as? String
                 removeNotifications.append(stemp!)
                 selectedIndexs.insert(indexPath.row)
             }
