@@ -4,6 +4,7 @@
 //
 
 import UIKit
+
 class AlarmTableViewController: UITableViewController {
     
     @IBOutlet var toggle: UISwitch!

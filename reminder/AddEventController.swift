@@ -86,8 +86,8 @@ class AddEventController: ReminderDataViewController {
         let content = UNMutableNotificationContent()
         content.title = eventTitle
         content.body = eventContent
-        content.sound = UNNotificationSound.default()
         content.badge = 1
+        content.sound = UNNotificationSound.default()
         
         var date = DateComponents()
         date.month = Int(dateComponents[0])
