@@ -143,6 +143,7 @@ class ViewController: ReminderDataViewController, UITableViewDelegate ,UITableVi
             updateEvent.eventContent = event.object(forKey: "Content") as! String
             updateEvent.timeStemp = event.object(forKey: "Stemp") as? String
             updateEvent.dateComponents = event.object(forKey: "Date") as! [String]
+            updateEvent.indexOfEvent = row
         }
     }
 }

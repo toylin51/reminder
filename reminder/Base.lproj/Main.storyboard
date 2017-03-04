@@ -26,11 +26,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="2h3-PO-hkp"/>
-                                    <barButtonItem systemItem="trash" id="xw5-el-yoh">
-                                        <connections>
-                                            <action selector="deleteButton:" destination="BYZ-38-t0r" id="xwz-EV-mDy"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem systemItem="trash" id="xw5-el-yoh"/>
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nae-zZ-yjl">
@@ -69,6 +65,7 @@
                                             <outlet property="eventContent" destination="eJm-GH-6JA" id="2gF-vQ-nNO"/>
                                             <outlet property="eventTitle" destination="E55-pW-R9Z" id="J4N-l6-p0u"/>
                                             <outlet property="imgView" destination="68m-cM-i8j" id="GlO-et-SdT"/>
+                                            <segue destination="4aM-0l-yru" kind="show" identifier="show" id="teT-uy-piv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -87,15 +84,9 @@
                                 <segue destination="4aM-0l-yru" kind="show" id="za7-6H-VEe"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="Idi-GX-0RC">
-                            <connections>
-                                <action selector="editButton:" destination="BYZ-38-t0r" id="mYO-0b-071"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Nae-zZ-yjl" id="TMl-mN-Glz"/>
-                        <outlet property="toolBar" destination="hx8-Pk-QRr" id="Hki-i7-3sA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -356,4 +347,7 @@
             <point key="canvasLocation" x="2679" y="-155"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="teT-uy-piv"/>
+    </inferredMetricsTieBreakers>
 </document>

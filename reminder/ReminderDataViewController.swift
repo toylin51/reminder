@@ -51,7 +51,6 @@ class ReminderDataViewController: UIViewController{
         events.write(toFile: writablePath, atomically: true)
     }
     
-    
     //MARK: 將資料寫入 plist
     func writePlist(title: String, content: String, date: [String], timeStemp: String) {
         let event = ["Title": title, "Content": content, "Date": date, "Stemp": timeStemp] as [String : Any]
@@ -59,4 +58,16 @@ class ReminderDataViewController: UIViewController{
         events.write(toFile: writablePath, atomically: true)
     }
     
+    //MARK: 更新 plist
+    func updatePlist(title: String, content: String, date: [String], timeStemp: String, index: Int) {
+        loadPlist()
+        let event = events.object(at: index) as AnyObject
+        event.setValue(title, forKey: "Title")
+        event.setValue(content, forKey: "Content")
+        event.setValue(date, forKey: "Date")
+        event.setValue(timeStemp, forKey: "Stemp")
+        
+        writePlist()
+        
+    }
 }
