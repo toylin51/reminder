@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class ViewController: ReminderDataViewController, UITableViewDelegate ,UITableViewDataSource{
     
@@ -102,6 +103,9 @@ class ViewController: ReminderDataViewController, UITableViewDelegate ,UITableVi
     //MARK: Delete Cell
     func tableView(_ tableView: UITableView,  commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)  {
         if editingStyle == .delete {
+            let timeStemp = (events.object(at: indexPath.row) as AnyObject).object(forKey: "Stemp") as? String
+            let center = UNUserNotificationCenter.current()
+            center.removePendingNotificationRequests(withIdentifiers: [timeStemp!])
             events.removeObject(at: indexPath.row)
             writePlist()
             tableView.deleteRows(at: [indexPath], with: .fade)
