@@ -15,43 +15,6 @@ class ViewController: ReminderDataViewController, UITableViewDelegate ,UITableVi
     
     // 取得螢幕的尺寸
     let fullScreenSize = UIScreen.main.bounds.size
-    /*
-    //MARK: Edit Button
-    @IBAction func editButton(_ sender: Any) {
-        if !isEditing {
-            setEditing(true, animated: true)
-            toolBar.isHidden = false
-            tableView.frame = CGRect(origin: CGPoint(x:0,y:64), size: CGSize(width:fullScreenSize.width,height:fullScreenSize.height-109))
-        }else{
-            setEditing(false, animated: true)
-            toolBar.isHidden = true
-            tableView.frame = CGRect(origin: CGPoint(x:0,y:64), size: CGSize(width:fullScreenSize.width,height:fullScreenSize.height-64))
-        }
-    }
-    
-    //MARK: Multi Delete Button
-    @IBAction func deleteButton(_ sender: Any) {
-        var selectedIndexs = IndexSet()
-        var removeNotifications = [String]()
-        if let selectedItems = tableView!.indexPathsForSelectedRows {
-            for indexPath in selectedItems {
-                let stemp = (events.object(at: indexPath.row) as AnyObject).object(forKey: "Stemp") as? String
-                removeNotifications.append(stemp!)
-                selectedIndexs.insert(indexPath.row)
-            }
-        }
-        
-        
-        let center = UNUserNotificationCenter.current()
-        center.removePendingNotificationRequests(withIdentifiers: removeNotifications)
-        events.removeObjects(at: selectedIndexs)
-        writePlist()
-        tableView?.reloadData()
-        toolBar.isHidden = true
-        tableView.setEditing(false, animated: true)
-        tableView.frame = CGRect(origin: CGPoint(x:0,y:64), size: CGSize(width:fullScreenSize.width,height:fullScreenSize.height-64))
-    }
-    */
     
     //MARK: Back to Menu
     @IBAction func unwindToMenu(segue: UIStoryboardSegue) {
@@ -147,19 +110,3 @@ class ViewController: ReminderDataViewController, UITableViewDelegate ,UITableVi
         }
     }
 }
-/*
-extension ViewController{
-    //改變編輯按鈕名稱
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: animated)
-        self.tableView.setEditing(editing, animated: animated)
-        
-        if editing {
-            self.navigationItem.rightBarButtonItem!.image = nil
-            self.navigationItem.rightBarButtonItem!.title = "Done"
-        } else {
-            self.navigationItem.rightBarButtonItem!.title = ""
-            self.navigationItem.rightBarButtonItem!.image = UIImage(named: "ic_list.png")
-        }
-    }
-}*/
