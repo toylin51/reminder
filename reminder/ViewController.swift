@@ -32,12 +32,18 @@ class ViewController: ReminderDataViewController, UITableViewDelegate ,UITableVi
     //MARK: Multi Delete Button
     @IBAction func deleteButton(_ sender: Any) {
         var selectedIndexs = IndexSet()
+        var removeNotifications = [String]()
         if let selectedItems = tableView!.indexPathsForSelectedRows {
             for indexPath in selectedItems {
+                var stemp = (events.object(at: indexPath.row) as AnyObject).object(forKey: "Stemp") as? String
+                removeNotifications.append(stemp!)
                 selectedIndexs.insert(indexPath.row)
             }
         }
         
+        
+        let center = UNUserNotificationCenter.current()
+        center.removePendingNotificationRequests(withIdentifiers: removeNotifications)
         events.removeObjects(at: selectedIndexs)
         writePlist()
         tableView?.reloadData()
