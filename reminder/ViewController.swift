@@ -9,13 +9,13 @@ import UserNotifications
 class ViewController: ReminderDataViewController, UITableViewDelegate ,UITableViewDataSource{
     
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var toolBar: UIToolbar!
+    //@IBOutlet var toolBar: UIToolbar!
     @IBOutlet var eventTitle: UILabel!
     @IBOutlet var eventContent: UILabel!
     
     // 取得螢幕的尺寸
     let fullScreenSize = UIScreen.main.bounds.size
-    
+    /*
     //MARK: Edit Button
     @IBAction func editButton(_ sender: Any) {
         if !isEditing {
@@ -51,6 +51,7 @@ class ViewController: ReminderDataViewController, UITableViewDelegate ,UITableVi
         tableView.setEditing(false, animated: true)
         tableView.frame = CGRect(origin: CGPoint(x:0,y:64), size: CGSize(width:fullScreenSize.width,height:fullScreenSize.height-64))
     }
+    */
     
     //MARK: Back to Menu
     @IBAction func unwindToMenu(segue: UIStoryboardSegue) {
@@ -63,10 +64,10 @@ class ViewController: ReminderDataViewController, UITableViewDelegate ,UITableVi
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.allowsMultipleSelectionDuringEditing = true
-        setEditing(false, animated: true)
+        //tableView.allowsMultipleSelectionDuringEditing = true
+        //setEditing(false, animated: true)
         tableView.frame = CGRect(origin: CGPoint(x:0,y:64), size: CGSize(width:fullScreenSize.width,height:fullScreenSize.height-64))
-        toolBar.isHidden = true
+        //toolBar.isHidden = true
         firstLoadPlist()
     }
     
@@ -93,9 +94,12 @@ class ViewController: ReminderDataViewController, UITableViewDelegate ,UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
         cell.accessoryType = .disclosureIndicator
         
-        cell.eventTitle.text = (events.object(at: indexPath.row) as AnyObject).object(forKey: "Title") as? String
-        cell.eventContent.text = (events.object(at: indexPath.row) as AnyObject).object(forKey: "Content") as? String
-        let dateArr = (events.object(at: indexPath.row) as AnyObject).object(forKey: "Date") as? [String]
+        let event =  (events.object(at: indexPath.row) as AnyObject)
+        
+        cell.eventTitle.text = event.object(forKey: "Title") as? String
+        cell.eventContent.text = event.object(forKey: "Content") as? String
+        let dateArr = event.object(forKey: "Date") as? [String]
+        
         if dateArr?.count != 0{
             cell.imgView.image = UIImage(named: "ic_alarm.png")
         }else{
@@ -119,8 +123,30 @@ class ViewController: ReminderDataViewController, UITableViewDelegate ,UITableVi
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+            tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)  {
+        if segue.identifier == "show"  {
+            let indexPath =  self.tableView.indexPathForSelectedRow
+            let updateEvent = segue.destination as! EventViewController
+            let row = indexPath!.row
+            let event =  (events.object(at: row) as AnyObject)
+            
+            updateEvent.isUpdate = true
+            updateEvent.eventTitle = event.object(forKey: "Title") as! String
+            updateEvent.eventContent = event.object(forKey: "Content") as! String
+            updateEvent.timeStemp = event.object(forKey: "Stemp") as? String
+            updateEvent.dateComponents = event.object(forKey: "Date") as! [String]
+        }
+    }
 }
-
+/*
 extension ViewController{
     //改變編輯按鈕名稱
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -135,4 +161,4 @@ extension ViewController{
             self.navigationItem.rightBarButtonItem!.image = UIImage(named: "ic_list.png")
         }
     }
-}
+}*/
