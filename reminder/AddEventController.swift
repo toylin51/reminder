@@ -15,7 +15,8 @@ class AddEventController: ReminderDataViewController {
     var eventContent = ""
     var dateComponents = [String]()
     var alarmData: Date?
-    let requestIdentifier = "SampleRequest"
+    var timeStemp: String?
+    
     // 取得螢幕的尺寸
     let fullScreenSize = UIScreen.main.bounds.size
     
@@ -25,8 +26,10 @@ class AddEventController: ReminderDataViewController {
         eventContent = myContent.text
         if eventTitle == "" { eventTitle = "New Event" }
         if eventContent == "" { eventContent = "No Content" }
+        if (timeStemp == nil) { timeStemp = getCurrentTime() }
+        
         //寫入資料
-        writePlist(title: eventTitle, content: eventContent, date: dateComponents)
+        writePlist(title: eventTitle, content: eventContent, date: dateComponents, timeStemp: timeStemp!)
         
         //觸發通知
         if dateComponents.count != 0{
@@ -92,10 +95,18 @@ class AddEventController: ReminderDataViewController {
         date.hour = Int(dateComponents[2])
         date.minute = Int(dateComponents[3])
         
+        timeStemp = getCurrentTime()
+        
         let trigger = UNCalendarNotificationTrigger.init(dateMatching: date, repeats: false)
-        let request = UNNotificationRequest(identifier: date.description, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: timeStemp!, content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+    
+    //MARK: Get current Time
+    func getCurrentTime() -> String {
+        let currentTime = Calendar.current.dateComponents([.month, .day, .hour, .minute], from: Date()).description
+        return currentTime
     }
 }
 

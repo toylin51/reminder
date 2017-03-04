@@ -53,8 +53,8 @@ class ReminderDataViewController: UIViewController {
     
     
     //MARK: 將資料寫入 plist
-    func writePlist(title: String, content: String, date: [String]) {
-        let event = ["Title": title, "Content": content, "Date": date] as [String : Any]
+    func writePlist(title: String, content: String, date: [String], timeStemp: String) {
+        let event = ["Title": title, "Content": content, "Date": date, "Stemp": timeStemp] as [String : Any]
         events.add(event)
         events.write(toFile: writablePath, atomically: true)
     }
