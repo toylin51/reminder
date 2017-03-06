@@ -15,7 +15,6 @@
 		7B5744711E6AF8BC00435965 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5744701E6AF8BC00435965 /* EventViewController.swift */; };
 		7B5744731E6B013000435965 /* DataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5744721E6B013000435965 /* DataTableViewController.swift */; };
 		7B9EBFC01E21E6A800222965 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9EBFBF1E21E6A800222965 /* CustomTableViewCell.swift */; };
-		7BA944B91E4DFF8B0085C30F /* ReminderDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA944B81E4DFF8B0085C30F /* ReminderDataViewController.swift */; };
 		7BD36D281E6D465B0012E1D8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD36D271E6D465B0012E1D8 /* MainViewController.swift */; };
 		7BEAC5361E503FC8006E225C /* AlarmTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEAC5351E503FC8006E225C /* AlarmTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -31,7 +30,6 @@
 		7B5744701E6AF8BC00435965 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		7B5744721E6B013000435965 /* DataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTableViewController.swift; sourceTree = "<group>"; };
 		7B9EBFBF1E21E6A800222965 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
-		7BA944B81E4DFF8B0085C30F /* ReminderDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderDataViewController.swift; sourceTree = "<group>"; };
 		7BD36D271E6D465B0012E1D8 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7BEAC5351E503FC8006E225C /* AlarmTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,7 +82,6 @@
 				7BD36D271E6D465B0012E1D8 /* MainViewController.swift */,
 				7B5744701E6AF8BC00435965 /* EventViewController.swift */,
 				7BEAC5351E503FC8006E225C /* AlarmTableViewController.swift */,
-				7BA944B81E4DFF8B0085C30F /* ReminderDataViewController.swift */,
 				7B5744721E6B013000435965 /* DataTableViewController.swift */,
 			);
 			name = Controller;
@@ -172,7 +169,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BA944B91E4DFF8B0085C30F /* ReminderDataViewController.swift in Sources */,
 				7BEAC5361E503FC8006E225C /* AlarmTableViewController.swift in Sources */,
 				7B5744711E6AF8BC00435965 /* EventViewController.swift in Sources */,
 				7B9EBFC01E21E6A800222965 /* CustomTableViewCell.swift in Sources */,

@@ -2,9 +2,6 @@
 //  MainViewController.swift
 //  reminder
 //
-//  Created by LinTing-yang on 2017/3/6.
-//  Copyright © 2017年 sample. All rights reserved.
-//
 
 import UIKit
 import UserNotifications
