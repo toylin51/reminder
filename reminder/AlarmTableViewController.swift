@@ -12,8 +12,6 @@ class AlarmTableViewController: UITableViewController {
     var pickerVisible = false
     var tempDate: Date?
     
-    let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
