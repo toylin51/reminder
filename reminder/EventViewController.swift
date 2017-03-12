@@ -12,11 +12,14 @@ class EventViewController: DataTableViewController {
     @IBOutlet var myContent: UITextView!
     @IBOutlet var myTime: UILabel!
     
+    //存檔用的變數
     var eventTitle = ""
     var eventContent = ""
     var dateComponents = [String]()
     var alarmData: Date?
     var timeStemp: String?
+    
+    //更新資料時的變數
     var isUpdate = false
     var indexOfEvent = 0
     
@@ -134,7 +137,7 @@ class EventViewController: DataTableViewController {
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
     
-    //MARK: Get current Time
+    //MARK: 取得現在時間
     func getCurrentTime() -> String {
         let currentTime = Calendar.current.dateComponents([.month, .day, .hour, .minute], from: Date()).description
         return currentTime
